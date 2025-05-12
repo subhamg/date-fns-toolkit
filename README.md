@@ -1,5 +1,10 @@
 # date-fns-toolkit
 
+[![CI](https://github.com/subhamg/date-fns-toolkit/actions/workflows/ci.yml/badge.svg)](https://github.com/subhamg/date-fns-toolkit/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/gh/subhamg/date-fns-toolkit/branch/main/graph/badge.svg)](https://codecov.io/gh/subhamg/date-fns-toolkit)
+[![npm version](https://badge.fury.io/js/date-fns-toolkit.svg)](https://badge.fury.io/js/date-fns-toolkit)
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-support-%23FFDD00?style=flat&logo=buy-me-a-coffee)](https://www.buymeacoffee.com/subhamg)
+
 A comprehensive toolkit for working with dates in JavaScript, including global timezone support and React integration.
 
 ## Features
@@ -288,3 +293,11 @@ All toolkit utility functions accept an optional timezone parameter. If not prov
 ## License
 
 MIT
+
+## Support
+
+If you find my packages helpful or are interested in the platform I'm building, I'd really appreciate a coffee! Your support helps me dedicate more time to open source projects and platform development.
+
+<a href="https://www.buymeacoffee.com/subhamg" target="_blank">
+  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" height="60" width="217">
+</a>

@@ -93,7 +93,6 @@ export const timeAgo = (
   const zonedDate = toZonedTime(ensureDate(date), tz);
   const now = toZonedTime(new Date(), tz);
   
-  const isPast = zonedDate < now;
   
   const distance = fnsFormatDistance(zonedDate, now, { addSuffix: true });
   
