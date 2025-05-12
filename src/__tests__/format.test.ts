@@ -1,7 +1,9 @@
 import { format, formatDateShort, formatDateLong } from '../utils/format';
 
 describe('Format utilities', () => {
-  const testDate = new Date(2023, 4, 15, 14, 30, 0); // May 15, 2023, 14:30:00
+  // Use an ISO string with UTC time to ensure consistency across environments
+  const isoDate = '2023-05-15T14:30:00.000Z'; // This is exactly 14:30:00 UTC
+  const testDate = new Date(isoDate);
   const timezone = 'UTC';
 
   describe('format', () => {
