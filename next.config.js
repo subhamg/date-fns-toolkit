@@ -5,7 +5,7 @@
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  webpack: (config, { isServer }) => {
+  webpack: (config) => {
     // Fix for "Module parse failed" error with date-fns-toolkit
     config.module.rules.push({
       test: /node_modules\/date-fns-toolkit\/dist\/index\.esm\.js$/,
