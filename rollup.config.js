@@ -1,15 +1,15 @@
-import resolve from '@rollup/plugin-node-resolve';
-import commonjs from '@rollup/plugin-commonjs';
-import typescript from '@rollup/plugin-typescript';
-import babel from '@rollup/plugin-babel';
-import terser from '@rollup/plugin-terser';
-import dts from 'rollup-plugin-dts';
-import peerDepsExternal from 'rollup-plugin-peer-deps-external';
-import { readFileSync } from 'fs';
+const resolve = require('@rollup/plugin-node-resolve');
+const commonjs = require('@rollup/plugin-commonjs');
+const typescript = require('@rollup/plugin-typescript');
+const babel = require('@rollup/plugin-babel');
+const terser = require('@rollup/plugin-terser');
+const { dts } = require('rollup-plugin-dts');
+const peerDepsExternal = require('rollup-plugin-peer-deps-external');
+const { readFileSync } = require('fs');
 
-const pkg = JSON.parse(readFileSync(new URL('./package.json', import.meta.url)));
+const pkg = JSON.parse(readFileSync('./package.json', 'utf8'));
 
-export default [
+module.exports = [
   // Main build
   {
     input: 'src/index.ts',
