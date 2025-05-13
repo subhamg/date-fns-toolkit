@@ -1,6 +1,6 @@
 {
     "name": "date-fns-toolkit",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "A comprehensive toolkit for working with dates in JavaScript, including timezone support and React integration",
     "type": "module",
     "main": "dist/index.js",
