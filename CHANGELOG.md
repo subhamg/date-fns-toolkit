@@ -1,3 +1,10 @@
+# 1.0.0 (2025-05-13)
+
+
+### Bug Fixes
+
+* resolve Next.js compatibility issues with module parsing ([c411dd6](https://github.com/subhamg/date-fns-toolkit/commit/c411dd6353768254b8f882275a99878d15881d6d))
+
 # Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
@@ -26,4 +33,4 @@ All notable changes to this project will be documented in this file. See [standa
 ### Added
 - Initial release with core functionality
 - Timezone-aware date operations
-- React integration with hooks and context 
+- React integration with hooks and context
