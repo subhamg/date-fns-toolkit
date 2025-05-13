@@ -18,6 +18,21 @@ All notable changes to this project will be documented in this file. See [standa
 
 <!-- CHANGELOG will be automatically updated by semantic-release -->
 
+## [1.0.8] - 2024-05-25
+
+### Fixed
+- Fixed "exports is not defined in ES module scope" error in Next.js
+- Updated src/core/index.ts to use proper ESM export syntax
+- Updated src/utils/relative.ts to fix import conflicts
+- Enhanced documentation with clearer Next.js integration instructions
+
+## [1.0.7] - 2024-05-23
+
+### Fixed
+- Resolved Next.js compatibility issues with module parsing
+- Added Next.js configuration guide and example
+- Fixed rollup.config.js to properly handle CommonJS and ESM outputs
+
 ## [1.0.3] - 2024-05-20
 
 ### Fixed

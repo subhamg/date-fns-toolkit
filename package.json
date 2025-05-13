@@ -1,14 +1,14 @@
 {
     "name": "date-fns-toolkit",
-    "version": "1.0.5",
+    "version": "1.0.8",
     "description": "A comprehensive toolkit for working with dates in JavaScript, including timezone support and React integration",
     "type": "commonjs",
     "main": "dist/index.js",
     "module": "dist/index.esm.js",
     "exports": {
         ".": {
-            "import": "./dist/index.esm.js",
-            "require": "./dist/index.js"
+            "require": "./dist/index.js",
+            "import": "./dist/index.mjs"
         }
     },
     "types": "dist/index.d.ts",
@@ -72,6 +72,7 @@
         "@types/react-dom": "^18.2.19",
         "@typescript-eslint/eslint-plugin": "^7.0.2",
         "@typescript-eslint/parser": "^7.0.2",
+        "babel-loader": "^9.1.3",
         "eslint": "^8.56.0",
         "eslint-plugin-react": "^7.33.2",
         "eslint-plugin-react-hooks": "^4.6.0",

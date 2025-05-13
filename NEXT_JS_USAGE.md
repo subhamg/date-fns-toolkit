@@ -19,19 +19,37 @@ ReferenceError: require is not defined in ES module scope, you can use import in
 This file is being treated as an ES module because it has a '.js' file extension
 ```
 
+### "exports is not defined in ES module scope" Error
+
+```
+Error: Failed to load external module date-fns-toolkit: ReferenceError: exports is not defined in ES module scope
+```
+
 ## Solution
 
-### Option 1: Add a Next.js Configuration File
+### Option 1: Use the MJS Import
 
-Create or update your `next.config.js` file:
+As of version 1.0.8, date-fns-toolkit provides a dedicated MJS file for ESM environments. In your Next.js application, import the package like this:
+
+```javascript
+// Use this import syntax
+import { TimezoneProvider, useTimezoneContext } from 'date-fns-toolkit';
+
+// Or explicitly use the MJS version
+// import { TimezoneProvider, useTimezoneContext } from 'date-fns-toolkit/dist/index.mjs';
+```
+
+### Option 2: Add a Next.js Configuration File
+
+If you're still encountering issues, create or update your `next.config.js` file:
 
 ```javascript
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   webpack: (config) => {
-    // Fix for date-fns-toolkit module parse error
+    // Fix for date-fns-toolkit module format issues
     config.module.rules.push({
-      test: /node_modules\/date-fns-toolkit\/dist\/index\.esm\.js$/,
+      test: /node_modules\/date-fns-toolkit\/dist\/.*\.js$/,
       type: 'javascript/auto',
       resolve: {
         fullySpecified: false
@@ -45,7 +63,7 @@ const nextConfig = {
 module.exports = nextConfig;
 ```
 
-### Option 2: Use the CommonJS Version Directly
+### Option 3: Use the CommonJS Version Directly
 
 If you're still having issues, you can import the CommonJS version directly:
 
@@ -57,20 +75,11 @@ import { format, addDays } from 'date-fns-toolkit';
 import { format, addDays } from 'date-fns-toolkit/dist/index.js';
 ```
 
-### Option 3: Use date-fns and date-fns-tz Directly
-
-If you're still facing issues, you can use the underlying libraries directly:
-
-```javascript
-import { format } from 'date-fns';
-import { formatInTimeZone } from 'date-fns-tz';
-```
-
 ## Troubleshooting
 
 If you continue to experience issues:
 
-1. Make sure you're using the latest version of date-fns-toolkit
+1. Make sure you're using the latest version of date-fns-toolkit (1.0.8 or later)
 2. Clear your Next.js cache: `rm -rf .next`
 3. Reinstall node_modules: `rm -rf node_modules && npm install`
 

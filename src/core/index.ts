@@ -12,12 +12,23 @@ const overriddenFunctions = [
   'startOfDay', 'endOfDay', 'isBefore', 'isAfter', 'isSameDay', 'format'
 ];
 
-// Re-export everything except the overridden functions
-Object.entries(dateFns).forEach(([key, value]) => {
-  if (!overriddenFunctions.includes(key)) {
-    exports[key] = value;
-  }
-});
+// Create a new object with all non-overridden functions
+const nonOverriddenFunctions = Object.fromEntries(
+  Object.entries(dateFns).filter(([key]) => !overriddenFunctions.includes(key))
+);
+
+// Export all non-overridden functions
+export const {
+  parse,
+  parseISO,
+  isValid,
+  formatDistance: originalFormatDistance,
+  formatDistanceToNow: originalFormatDistanceToNow,
+  formatRelative: originalFormatRelative,
+  differenceInCalendarDays: originalDifferenceInCalendarDays,
+  // Export all other date-fns functions
+  ...rest
+} = nonOverriddenFunctions;
 
 // Re-export everything from date-fns-tz
 export * from 'date-fns-tz';

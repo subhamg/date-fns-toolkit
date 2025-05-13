@@ -14,7 +14,7 @@ const ensureDate = (date: DateInput): Date => {
 };
 
 /**
- * Format the distance between two dates, respecting the timezone
+ * Format the distance between two dates with timezone awareness
  * If no timezone is provided, the global default timezone will be used
  */
 export const formatDistance = (
@@ -32,11 +32,11 @@ export const formatDistance = (
 };
 
 /**
- * Format the distance between a date and now, respecting the timezone
+ * Format the distance between a date and now with timezone awareness
  * If no timezone is provided, the global default timezone will be used
  */
 export const formatDistanceToNow = (
-  date: DateInput, 
+  date: DateInput,
   options?: Parameters<typeof fnsFormatDistanceToNow>[1],
   timezone?: string
 ): string => {
@@ -48,12 +48,12 @@ export const formatDistanceToNow = (
 };
 
 /**
- * Format a date relative to the given base date, respecting the timezone
+ * Format a date relative to a base date with timezone awareness
  * If no timezone is provided, the global default timezone will be used
  */
 export const formatRelative = (
-  date: DateInput, 
-  baseDate: DateInput, 
+  date: DateInput,
+  baseDate: DateInput,
   options?: Parameters<typeof fnsFormatRelative>[2],
   timezone?: string
 ): string => {
@@ -66,12 +66,12 @@ export const formatRelative = (
 };
 
 /**
- * Get the difference in calendar days between two dates, respecting the timezone
+ * Get the difference in calendar days between two dates with timezone awareness
  * If no timezone is provided, the global default timezone will be used
  */
 export const differenceInCalendarDays = (
-  dateLeft: DateInput, 
-  dateRight: DateInput, 
+  dateLeft: DateInput,
+  dateRight: DateInput,
   timezone?: string
 ): number => {
   const tz = resolveTimezone(timezone);
@@ -82,19 +82,15 @@ export const differenceInCalendarDays = (
 };
 
 /**
- * Get a human-readable time ago string (e.g., "5 minutes ago", "in 3 days")
+ * Format a date as a time ago string (e.g., "2 hours ago") with timezone awareness
  * If no timezone is provided, the global default timezone will be used
  */
 export const timeAgo = (
-  date: DateInput, 
+  date: DateInput,
   timezone?: string
 ): string => {
   const tz = resolveTimezone(timezone);
   const zonedDate = toZonedTime(ensureDate(date), tz);
-  const now = toZonedTime(new Date(), tz);
-  
-  
-  const distance = fnsFormatDistance(zonedDate, now, { addSuffix: true });
-  
-  return distance;
+  const zonedNow = toZonedTime(new Date(), tz);
+  return fnsFormatDistance(zonedDate, zonedNow, { addSuffix: true });
 }; 

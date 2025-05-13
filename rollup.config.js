@@ -18,6 +18,11 @@ module.exports = [
         exports: 'named',
       },
       {
+        file: 'dist/index.mjs',
+        format: 'esm',
+        sourcemap: true,
+      },
+      {
         file: 'dist/index.esm.js',
         format: 'esm',
         sourcemap: true,

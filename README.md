@@ -308,6 +308,10 @@ If you're using date-fns-toolkit with Next.js, you might encounter module loadin
 
 [Next.js Usage Guide](./NEXT_JS_USAGE.md)
 
+We also have a complete example of using date-fns-toolkit in a Next.js application:
+
+[Next.js Example](./examples/nextjs-example.jsx)
+
 Quick fix: Add this to your `next.config.js`:
 
 ```javascript
@@ -329,3 +333,22 @@ const nextConfig = {
 
 module.exports = nextConfig;
 ```
+
+## Universal Compatibility
+
+date-fns-toolkit is designed to work in all JavaScript environments:
+
+- **Node.js**: Works in both CommonJS and ESM environments
+- **Browsers**: Works with all modern bundlers and browsers
+- **React**: Includes React-specific hooks and components
+- **Next.js**: Special compatibility with Next.js (see [Next.js Usage Guide](./NEXT_JS_USAGE.md))
+
+### Module Formats
+
+The package provides multiple module formats to ensure compatibility:
+
+- **CommonJS**: `dist/index.js` (for Node.js and most bundlers)
+- **ESM**: `dist/index.mjs` (for modern bundlers and environments)
+- **Legacy ESM**: `dist/index.esm.js` (for backward compatibility)
+
+In most cases, your bundler or environment will automatically choose the right format.
