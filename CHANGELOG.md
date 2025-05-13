@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/subhamg/date-fns-toolkit/compare/v1.0.4...v1.0.5) (2025-05-13)
+
+
+### Bug Fixes
+
+* remove unused isServer parameter in next.config.js ([5494aaf](https://github.com/subhamg/date-fns-toolkit/commit/5494aafd7208136469b21206bdc6f4d0966fb597))
+
 # 1.0.0 (2025-05-13)
 
 
