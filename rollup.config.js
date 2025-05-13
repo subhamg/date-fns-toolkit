@@ -3,28 +3,27 @@ const commonjs = require('@rollup/plugin-commonjs');
 const typescript = require('@rollup/plugin-typescript');
 const babel = require('@rollup/plugin-babel');
 const terser = require('@rollup/plugin-terser');
-const { dts } = require('rollup-plugin-dts');
 const peerDepsExternal = require('rollup-plugin-peer-deps-external');
-const { readFileSync } = require('fs');
-
-const pkg = JSON.parse(readFileSync('./package.json', 'utf8'));
+const { dts } = require('rollup-plugin-dts');
 
 module.exports = [
-  // Main build
+  // Main bundle
   {
     input: 'src/index.ts',
     output: [
       {
-        file: pkg.main,
+        file: 'dist/index.js',
         format: 'cjs',
         sourcemap: true,
+        exports: 'named',
       },
       {
-        file: pkg.module,
+        file: 'dist/index.esm.js',
         format: 'esm',
         sourcemap: true,
-      },
+      }
     ],
+    external: ['react', 'react-dom', 'date-fns', 'date-fns-tz'],
     plugins: [
       peerDepsExternal(),
       resolve(),
@@ -33,16 +32,19 @@ module.exports = [
       babel({
         babelHelpers: 'bundled',
         exclude: 'node_modules/**',
-        extensions: ['.ts', '.tsx'],
+        presets: [
+          '@babel/preset-env',
+          '@babel/preset-react',
+          '@babel/preset-typescript'
+        ]
       }),
-      terser(),
-    ],
-    external: Object.keys(pkg.dependencies || {}),
+      terser()
+    ]
   },
-  // Types build
+  // Type definitions
   {
-    input: 'dist/dts/index.d.ts',
+    input: 'src/index.ts',
     output: [{ file: 'dist/index.d.ts', format: 'es' }],
-    plugins: [dts()],
-  },
+    plugins: [dts()]
+  }
 ]; 

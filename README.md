@@ -301,3 +301,31 @@ If you find my packages helpful or are interested in the platform I'm building, 
 <a href="https://www.buymeacoffee.com/subhamg" target="_blank">
   <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" height="60" width="217">
 </a>
+
+## Next.js Compatibility
+
+If you're using date-fns-toolkit with Next.js, you might encounter module loading issues. We've provided a detailed guide to help you resolve them:
+
+[Next.js Usage Guide](./NEXT_JS_USAGE.md)
+
+Quick fix: Add this to your `next.config.js`:
+
+```javascript
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  webpack: (config) => {
+    // Fix for date-fns-toolkit module parse error
+    config.module.rules.push({
+      test: /node_modules\/date-fns-toolkit\/dist\/index\.esm\.js$/,
+      type: 'javascript/auto',
+      resolve: {
+        fullySpecified: false
+      }
+    });
+    
+    return config;
+  }
+};
+
+module.exports = nextConfig;
+```
