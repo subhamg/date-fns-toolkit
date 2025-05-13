@@ -1,6 +1,6 @@
 {
     "name": "date-fns-toolkit",
-    "version": "0.0.0-development",
+    "version": "1.0.1",
     "description": "A comprehensive toolkit for working with dates in JavaScript, including timezone support and React integration",
     "type": "module",
     "main": "dist/index.js",
@@ -20,7 +20,8 @@
         "typecheck": "tsc --noEmit",
         "prepare": "npm run build",
         "prepublishOnly": "npm run lint && npm run typecheck && npm test",
-        "semantic-release": "semantic-release"
+        "semantic-release": "semantic-release",
+        "release:local": "npm version patch && npm publish"
     },
     "keywords": [
         "date",
