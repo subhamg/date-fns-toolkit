@@ -281,27 +281,6 @@ All toolkit utility functions accept an optional timezone parameter. If not prov
 - `isAfter(date1, date2, timezone?)`
 - `isSameDay(date1, date2, timezone?)`
 
-## Why Use This Library?
-
-1. **All-in-one**: Includes date-fns and date-fns-tz functionality in a single package
-2. **Global default timezone**: Set once, use everywhere - solves a major pain point with date-fns-tz
-3. **Flexibility**: Choose between global defaults, explicit parameters, or React context
-4. **Tree-shaking**: Only include the functions you actually use
-5. **React integration**: First-class support for React with hooks and context
-6. **TypeScript support**: Full type definitions for better development experience
-
-## License
-
-MIT
-
-## Support
-
-If you find my packages helpful or are interested in the platform I'm building, I'd really appreciate a coffee! Your support helps me dedicate more time to open source projects and platform development.
-
-<a href="https://www.buymeacoffee.com/subhamg" target="_blank">
-  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" height="60" width="217">
-</a>
-
 ## Next.js Compatibility
 
 If you're using date-fns-toolkit with Next.js, you might encounter module loading issues. We've provided a detailed guide to help you resolve them:
@@ -362,3 +341,25 @@ Current version: 1.0.9
 - [Changelog](./CHANGELOG.md) - Brief summary of changes in each version
 - [Full Changelog](./FULL_CHANGELOG.md) - Detailed history of all changes
 - [Release Notes & Migration Guides](./RELEASES.md) - Release notes and upgrade instructions
+
+## Why Use This Library?
+
+1. **All-in-one**: Includes date-fns and date-fns-tz functionality in a single package
+2. **Global default timezone**: Set once, use everywhere - solves a major pain point with date-fns-tz
+3. **Flexibility**: Choose between global defaults, explicit parameters, or React context
+4. **Tree-shaking**: Only include the functions you actually use
+5. **React integration**: First-class support for React with hooks and context
+6. **TypeScript support**: Full type definitions for better development experience
+
+## License
+
+MIT
+
+## Support
+
+If you find my packages helpful or are interested in the platform I'm building, I'd really appreciate a coffee! Your support helps me dedicate more time to open source projects and platform development.
+
+<a href="https://www.buymeacoffee.com/subhamg" target="_blank">
+  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" height="60" width="217">
+</a>
+
