@@ -356,3 +356,9 @@ In most cases, your bundler or environment will automatically choose the right f
 ## Latest Version
 
 Current version: 1.0.9
+
+## Changelog and Release Notes
+
+- [Changelog](./CHANGELOG.md) - Brief summary of changes in each version
+- [Full Changelog](./FULL_CHANGELOG.md) - Detailed history of all changes
+- [Release Notes & Migration Guides](./RELEASES.md) - Release notes and upgrade instructions
