@@ -92,6 +92,23 @@ const formattedDate = format(new Date(), 'yyyy-MM-dd HH:mm:ss');
 const tokyoDate = format(new Date(), 'yyyy-MM-dd HH:mm:ss', 'Asia/Tokyo');
 ```
 
+### `formatISO(date: DateInput, options?: { representation?: 'complete' | 'date' | 'time'; format?: 'extended' | 'basic' }, timezone?: string): string`
+
+Formats a date to ISO 8601 format in the specified timezone.
+
+```javascript
+import { formatISO } from 'date-fns-toolkit';
+
+// Format a date in ISO format in the global default timezone
+const isoDate = formatISO(new Date());
+
+// Format a date in ISO format in a specific timezone
+const tokyoIsoDate = formatISO(new Date(), undefined, 'Asia/Tokyo');
+
+// Format only the date part
+const isoDateOnly = formatISO(new Date(), { representation: 'date' });
+```
+
 ### `formatDateShort(date: DateInput, timezone?: string): string`
 
 Formats a date as MM/dd/yyyy in the specified timezone.
@@ -146,6 +163,20 @@ const date = parseInTimeZone('2023-05-15 14:30', 'yyyy-MM-dd HH:mm');
 
 // Parse a date string in a specific timezone
 const tokyoDate = parseInTimeZone('2023-05-15 14:30', 'yyyy-MM-dd HH:mm', 'Asia/Tokyo');
+```
+
+### `parseISO(dateString: string, timezone?: string): Date`
+
+Parses an ISO 8601 date string in the specified timezone.
+
+```javascript
+import { parseISO } from 'date-fns-toolkit';
+
+// Parse an ISO date string in the global default timezone
+const date = parseISO('2023-05-15T14:30:00Z');
+
+// Parse an ISO date string in a specific timezone
+const tokyoDate = parseISO('2023-05-15T14:30:00Z', 'Asia/Tokyo');
 ```
 
 ## Conversion Functions
@@ -301,6 +332,50 @@ import { isSameDay } from 'date-fns-toolkit';
 
 // Check if date1 and date2 are the same day
 const result = isSameDay(date1, date2);
+```
+
+### `isEqual(date1: DateInput, date2: DateInput, timezone?: string): boolean`
+
+Checks if two dates are equal (same timestamp), respecting the timezone.
+
+```javascript
+import { isEqual } from 'date-fns-toolkit';
+
+// Check if two dates are equal
+const result = isEqual(date1, date2);
+```
+
+### `isWithinInterval(date: DateInput, interval: { start: DateInput; end: DateInput }, timezone?: string): boolean`
+
+Checks if a date is within the specified interval, respecting the timezone.
+
+```javascript
+import { isWithinInterval } from 'date-fns-toolkit';
+
+// Check if a date is within an interval
+const result = isWithinInterval(date, { start: startDate, end: endDate });
+```
+
+### `isSameOrAfter(date1: DateInput, date2: DateInput, timezone?: string): boolean`
+
+Checks if the first date is the same as or after the second date, respecting the timezone.
+
+```javascript
+import { isSameOrAfter } from 'date-fns-toolkit';
+
+// Check if date1 is the same as or after date2
+const result = isSameOrAfter(date1, date2);
+```
+
+### `isSameOrBefore(date1: DateInput, date2: DateInput, timezone?: string): boolean`
+
+Checks if the first date is the same as or before the second date, respecting the timezone.
+
+```javascript
+import { isSameOrBefore } from 'date-fns-toolkit';
+
+// Check if date1 is the same as or before date2
+const result = isSameOrBefore(date1, date2);
 ```
 
 ## Range Functions
@@ -485,107 +560,3 @@ console.log(future); // e.g., 'in 8 months'
 ### Hooks
 
 #### `useDateTimezone(timezone?: string)`
-
-React hook that returns timezone-aware date utility functions.
-
-```jsx
-import React from 'react';
-import { useDateTimezone } from 'date-fns-toolkit';
-
-function DateDisplay() {
-  // Use the global default timezone
-  const dateUtils = useDateTimezone();
-  
-  // Or specify a timezone
-  const tokyoDateUtils = useDateTimezone('Asia/Tokyo');
-  
-  return (
-    <div>
-      <p>Current time: {dateUtils.formatDateTime(new Date())}</p>
-      <p>Tokyo time: {tokyoDateUtils.formatDateTime(new Date())}</p>
-    </div>
-  );
-}
-```
-
-#### `useTimezoneContext()`
-
-React hook to access the timezone context.
-
-```jsx
-import React from 'react';
-import { useTimezoneContext } from 'date-fns-toolkit';
-
-function TimezoneSelector() {
-  const { timezone, setTimezone } = useTimezoneContext();
-  
-  return (
-    <div>
-      <p>Current timezone: {timezone}</p>
-      <select 
-        value={timezone} 
-        onChange={(e) => setTimezone(e.target.value)}
-      >
-        <option value="America/New_York">New York</option>
-        <option value="Europe/London">London</option>
-        <option value="Asia/Tokyo">Tokyo</option>
-      </select>
-    </div>
-  );
-}
-```
-
-### Components
-
-#### `TimezoneProvider`
-
-Context provider for application-wide timezone settings.
-
-```jsx
-import React from 'react';
-import { TimezoneProvider } from 'date-fns-toolkit';
-
-function App() {
-  return (
-    <TimezoneProvider defaultTimezone="America/New_York" syncWithGlobal={true}>
-      {/* Your app components */}
-      <DateDisplay />
-      <TimezoneSelector />
-    </TimezoneProvider>
-  );
-}
-```
-
-Props:
-- `children`: React children
-- `defaultTimezone`: (optional) Initial timezone to use
-- `syncWithGlobal`: (optional, default: false) When true, changes to context timezone will also update the global default
-
-## TypeScript Types
-
-### `DateInput<D = Date>`
-
-Type for acceptable date input values.
-
-```typescript
-import type { DateInput } from 'date-fns-toolkit';
-
-// Can be used with generics for libraries that extend Date
-function formatMyCustomDate<T extends Date>(date: DateInput<T>): string {
-  // Implementation
-}
-```
-
-### `TimezoneProviderProps`
-
-Type for the props of the TimezoneProvider component.
-
-```typescript
-import type { TimezoneProviderProps } from 'date-fns-toolkit';
-
-const providerProps: TimezoneProviderProps = {
-  children: <App />,
-  defaultTimezone: 'America/New_York',
-  syncWithGlobal: true
-};
-``` 

@@ -9,4 +9,7 @@ export * from './operations';
 export * from './conversion';
 export * from './format';
 export * from './ranges';
-export * from './relative'; 
+export * from './relative';
+export * from './setters';
+export * from './time-operations';
+export * from './validation'; 

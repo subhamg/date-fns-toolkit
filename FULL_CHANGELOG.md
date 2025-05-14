@@ -2,7 +2,30 @@
 
 This document provides a detailed history of all changes made to the date-fns-toolkit package.
 
-## Version 1.0.9 (2024-05-30)
+## Version 1.1.0 (2025-05-14)
+
+### Added
+- Added timezone-aware versions of all date-fns functions
+- Added `isEqual` function with timezone awareness
+- Added `isWithinInterval` function with timezone awareness
+- Added `formatISO` function with timezone awareness
+- Added `parseISO` function with timezone awareness
+- Added `isSameOrAfter` function with timezone awareness
+- Added `isSameOrBefore` function with timezone awareness
+- Added setter functions: `setMinutes`, `setHours`, `setSeconds`, `setMilliseconds`, `setDate`, `setMonth`, `setYear`
+- Added time operations: `addMinutes`, `subWeeks`, `addWeeks`, `startOfISOWeek`, `endOfISOWeek`, `getUnixTime`, `getDaysInMonth`
+- Added difference functions: `differenceInMilliseconds`, `differenceInDays`, `differenceInYears`, `differenceInMonths`, `differenceInWeeks`, `differenceInHours`, `differenceInMinutes`, `differenceInSeconds`
+- Added validation functions: `isValid`
+- Fixed `parse` function to be timezone-aware
+- Updated core/index.ts to properly re-export all date-fns and date-fns-tz functions
+- All date-fns functions now use the global timezone by default
+- Added comprehensive example in examples/timezone-aware-functions.js
+
+### Fixed
+- Fixed issue where some date-fns functions were using system timezone instead of global timezone
+- Fixed naming conflicts between date-fns and date-fns-tz exports
+
+## Version 1.0.9 (2025-05-14)
 
 ### Added
 - Created dedicated Next.js example file (examples/nextjs-example.jsx) showing best practices for using the library in Next.js applications
@@ -24,7 +47,7 @@ This document provides a detailed history of all changes made to the date-fns-to
 - Improved release process documentation
 - Enhanced test coverage for core functionality
 
-## Version 1.0.8 (2024-05-25)
+## Version 1.0.8 (2025-05-14)
 
 ### Fixed
 - Fixed "exports is not defined in ES module scope" error in Next.js
@@ -36,7 +59,7 @@ This document provides a detailed history of all changes made to the date-fns-to
 - Improved module format handling in package.json exports field
 - Updated rollup configuration to generate more compatible output formats
 
-## Version 1.0.7 (2024-05-23)
+## Version 1.0.7 (2025-05-14)
 
 ### Fixed
 - Resolved Next.js compatibility issues with module parsing
@@ -52,14 +75,14 @@ This document provides a detailed history of all changes made to the date-fns-to
 ### Bug Fixes
 - Removed unused isServer parameter in next.config.js
 
-## Version 1.0.3 (2024-05-20)
+## Version 1.0.3 (2025-05-13)
 
 ### Fixed
 - Resolved Next.js compatibility issues with module parsing
 - Added Next.js configuration guide and example
 - Fixed rollup.config.js to properly handle CommonJS and ESM outputs
 
-## Version 1.0.2 (2024-05-15)
+## Version 1.0.2 (2025-05-13)
 
 ### Added
 - Added comprehensive documentation
@@ -69,14 +92,14 @@ This document provides a detailed history of all changes made to the date-fns-to
 ### Fixed
 - Fixed name conflicts between date-fns and date-fns-tz exports
 
-## Version 1.0.1 (2024-05-10)
+## Version 1.0.1 (2025-05-13)
 
 ### Added
 - Initial release with core functionality
 - Timezone-aware date operations
 - React integration with hooks and context
 
-## Version 1.0.0 (2024-05-05)
+## Version 1.0.0 (2025-05-13)
 
 ### Initial Release
 - Core date-fns and date-fns-tz functionality

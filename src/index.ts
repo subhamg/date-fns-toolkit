@@ -2,7 +2,14 @@
 export type { DateInput } from './types';
 export type { TimezoneProviderProps } from './TimezoneContext';
 
-// Re-export date-fns and date-fns-tz core functionality
+// Export timezone configuration functions
+export {
+  setDefaultTimezone,
+  getDefaultTimezone,
+  resolveTimezone
+} from './timezone-config';
+
+// Export core date-fns and date-fns-tz functionality
 export * from './core';
 
 // Export hooks and components
@@ -11,16 +18,15 @@ export { TimezoneProvider, useTimezoneContext } from './TimezoneContext';
 
 // Export global timezone configuration
 export { 
-  setDefaultTimezone, 
-  getDefaultTimezone,
   detectTimezone,
   initializeTimezone
 } from './timezone-config';
 
 // Export individual toolkit utility functions
 // Format functions
-export { 
+export {
   format,
+  formatISO,
   formatDateShort,
   formatDateLong,
   formatDateTime,
@@ -35,7 +41,9 @@ export {
 
 // Parsing functions
 export {
-  parseInTimeZone
+  parseInTimeZone,
+  parseISO,
+  parse
 } from './utils';
 
 // Date operations with timezone awareness
@@ -47,14 +55,36 @@ export {
   addYears,
   subYears,
   startOfDay,
-  endOfDay
+  endOfDay,
+  // New time operations
+  addMinutes,
+  addWeeks,
+  subWeeks,
+  getDaysInMonth,
+  getUnixTime
+} from './utils';
+
+// Setters with timezone awareness
+export {
+  setMinutes,
+  setHours,
+  setSeconds,
+  setMilliseconds,
+  setDate,
+  setMonth,
+  setYear
 } from './utils';
 
 // Comparison functions with timezone awareness
 export {
   isBefore,
   isAfter,
-  isSameDay
+  isSameDay,
+  isEqual,
+  isWithinInterval,
+  isSameOrAfter,
+  isSameOrBefore,
+  isValid
 } from './utils';
 
 // Range functions with timezone awareness
@@ -65,6 +95,8 @@ export {
   endOfMonth,
   startOfYear,
   endOfYear,
+  startOfISOWeek,
+  endOfISOWeek,
   eachDayOfInterval,
   getDateRange
 } from './utils';
@@ -75,5 +107,14 @@ export {
   formatDistanceToNow,
   formatRelative,
   differenceInCalendarDays,
-  timeAgo
+  timeAgo,
+  // New difference functions
+  differenceInMilliseconds,
+  differenceInDays,
+  differenceInYears,
+  differenceInMonths,
+  differenceInWeeks,
+  differenceInHours,
+  differenceInMinutes,
+  differenceInSeconds
 } from './utils';

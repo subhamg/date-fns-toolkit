@@ -3,7 +3,7 @@
 [![CI](https://github.com/subhamg/date-fns-toolkit/actions/workflows/ci.yml/badge.svg)](https://github.com/subhamg/date-fns-toolkit/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/subhamg/date-fns-toolkit/branch/main/graph/badge.svg)](https://codecov.io/gh/subhamg/date-fns-toolkit)
 [![npm version](https://img.shields.io/npm/v/date-fns-toolkit.svg)](https://www.npmjs.com/package/date-fns-toolkit)
-[![Version](https://img.shields.io/badge/version-1.0.9-blue.svg)](https://github.com/subhamg/date-fns-toolkit/releases)
+[![Version](https://img.shields.io/badge/version-1.1.0-blue.svg)](https://github.com/subhamg/date-fns-toolkit/releases)
 [![Downloads](https://img.shields.io/npm/dm/date-fns-toolkit.svg)](https://www.npmjs.com/package/date-fns-toolkit)
 [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-support-%23FFDD00?style=flat&logo=buy-me-a-coffee)](https://www.buymeacoffee.com/subhamg)
 
@@ -13,6 +13,7 @@ A comprehensive toolkit for working with dates in JavaScript, including global t
 
 - ✅ **All-in-one package** - includes date-fns and date-fns-tz functionality
 - ✅ **Global default timezone** - set once, use everywhere
+- ✅ **All date-fns functions are timezone-aware**: Every function from date-fns and date-fns-tz uses the global timezone
 - ✅ **Tree-shakable individual functions** - include only what you use
 - ✅ **React hooks** for timezone-aware date handling in components
 - ✅ **Consistent timezone handling** - no more timezone conversion bugs
@@ -336,7 +337,7 @@ In most cases, your bundler or environment will automatically choose the right f
 
 ## Latest Version
 
-Current version: 1.0.9
+Current version: 1.1.0
 
 ## Changelog and Release Notes
 

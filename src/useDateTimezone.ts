@@ -31,6 +31,9 @@ export function useDateTimezone(timezone?: string) {
       formatTime: (date: DateInput) => 
         utils.formatTime(date, tz),
       
+      formatISO: (date: DateInput, options?: Parameters<typeof utils.formatISO>[1]) => 
+        utils.formatISO(date, options, tz),
+      
       // Conversion functions
       toZonedTime: (date: DateInput) => 
         utils.toZonedTime(date, tz),
@@ -41,6 +44,16 @@ export function useDateTimezone(timezone?: string) {
       // Parsing functions
       parseInTimeZone: (dateString: string, formatStr: string) => 
         utils.parseInTimeZone(dateString, formatStr, tz),
+      
+      parseISO: (dateString: string) => 
+        utils.parseISO(dateString, tz),
+      
+      parse: (dateString: string, formatString: string, referenceDate: Date) => 
+        utils.parse(dateString, formatString, referenceDate, tz),
+      
+      // Validation functions
+      isValid: (date: DateInput) => 
+        utils.isValid(date, tz),
       
       // Date operations
       addDays: (date: DateInput, amount: number) => 
@@ -61,6 +74,43 @@ export function useDateTimezone(timezone?: string) {
       subYears: (date: DateInput, amount: number) => 
         utils.subYears(date, amount, tz),
       
+      addMinutes: (date: DateInput, amount: number) => 
+        utils.addMinutes(date, amount, tz),
+      
+      addWeeks: (date: DateInput, amount: number) => 
+        utils.addWeeks(date, amount, tz),
+      
+      subWeeks: (date: DateInput, amount: number) => 
+        utils.subWeeks(date, amount, tz),
+      
+      getDaysInMonth: (date: DateInput) => 
+        utils.getDaysInMonth(date, tz),
+      
+      getUnixTime: (date: DateInput) => 
+        utils.getUnixTime(date, tz),
+      
+      // Setters
+      setMinutes: (date: DateInput, minutes: number) => 
+        utils.setMinutes(date, minutes, tz),
+      
+      setHours: (date: DateInput, hours: number) => 
+        utils.setHours(date, hours, tz),
+      
+      setSeconds: (date: DateInput, seconds: number) => 
+        utils.setSeconds(date, seconds, tz),
+      
+      setMilliseconds: (date: DateInput, milliseconds: number) => 
+        utils.setMilliseconds(date, milliseconds, tz),
+      
+      setDate: (date: DateInput, dayOfMonth: number) => 
+        utils.setDate(date, dayOfMonth, tz),
+      
+      setMonth: (date: DateInput, month: number) => 
+        utils.setMonth(date, month, tz),
+      
+      setYear: (date: DateInput, year: number) => 
+        utils.setYear(date, year, tz),
+      
       startOfDay: (date: DateInput) => 
         utils.startOfDay(date, tz),
       
@@ -76,6 +126,18 @@ export function useDateTimezone(timezone?: string) {
       
       isSameDay: (date1: DateInput, date2: DateInput) => 
         utils.isSameDay(date1, date2, tz),
+      
+      isEqual: (date1: DateInput, date2: DateInput) => 
+        utils.isEqual(date1, date2, tz),
+      
+      isWithinInterval: (date: DateInput, interval: { start: DateInput; end: DateInput }) => 
+        utils.isWithinInterval(date, interval, tz),
+      
+      isSameOrAfter: (date1: DateInput, date2: DateInput) => 
+        utils.isSameOrAfter(date1, date2, tz),
+      
+      isSameOrBefore: (date1: DateInput, date2: DateInput) => 
+        utils.isSameOrBefore(date1, date2, tz),
       
       // Range functions
       startOfWeek: (date: DateInput, options?: Parameters<typeof utils.startOfWeek>[1]) => 
@@ -102,6 +164,12 @@ export function useDateTimezone(timezone?: string) {
       getDateRange: (date: DateInput, rangeType: 'day' | 'week' | 'month' | 'year') => 
         utils.getDateRange(date, rangeType, tz),
       
+      startOfISOWeek: (date: DateInput) => 
+        utils.startOfISOWeek(date, tz),
+      
+      endOfISOWeek: (date: DateInput) => 
+        utils.endOfISOWeek(date, tz),
+      
       // Relative time functions
       formatDistance: (date: DateInput, baseDate: DateInput, options?: Parameters<typeof utils.formatDistance>[2]) => 
         utils.formatDistance(date, baseDate, options, tz),
@@ -117,6 +185,31 @@ export function useDateTimezone(timezone?: string) {
       
       timeAgo: (date: DateInput) => 
         utils.timeAgo(date, tz),
+      
+      // New difference functions
+      differenceInMilliseconds: (dateLeft: DateInput, dateRight: DateInput) => 
+        utils.differenceInMilliseconds(dateLeft, dateRight, tz),
+      
+      differenceInDays: (dateLeft: DateInput, dateRight: DateInput) => 
+        utils.differenceInDays(dateLeft, dateRight, tz),
+      
+      differenceInYears: (dateLeft: DateInput, dateRight: DateInput) => 
+        utils.differenceInYears(dateLeft, dateRight, tz),
+      
+      differenceInMonths: (dateLeft: DateInput, dateRight: DateInput) => 
+        utils.differenceInMonths(dateLeft, dateRight, tz),
+      
+      differenceInWeeks: (dateLeft: DateInput, dateRight: DateInput) => 
+        utils.differenceInWeeks(dateLeft, dateRight, tz),
+      
+      differenceInHours: (dateLeft: DateInput, dateRight: DateInput) => 
+        utils.differenceInHours(dateLeft, dateRight, tz),
+      
+      differenceInMinutes: (dateLeft: DateInput, dateRight: DateInput) => 
+        utils.differenceInMinutes(dateLeft, dateRight, tz),
+      
+      differenceInSeconds: (dateLeft: DateInput, dateRight: DateInput) => 
+        utils.differenceInSeconds(dateLeft, dateRight, tz),
       
       // Timezone info
       getTimezone: () => tz

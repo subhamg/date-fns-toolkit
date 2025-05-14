@@ -4,7 +4,30 @@ All notable changes to this project will be documented in this file. See [standa
 
 <!-- CHANGELOG will be automatically updated by semantic-release -->
 
-## [1.0.9] - 2024-05-30
+## [1.1.0] - 2025-05-14
+
+### Added
+- Added timezone-aware versions of all date-fns functions
+- Added `isEqual` function with timezone awareness
+- Added `isWithinInterval` function with timezone awareness
+- Added `formatISO` function with timezone awareness
+- Added `parseISO` function with timezone awareness
+- Added `isSameOrAfter` function with timezone awareness
+- Added `isSameOrBefore` function with timezone awareness
+- Added setter functions: `setMinutes`, `setHours`, `setSeconds`, `setMilliseconds`, `setDate`, `setMonth`, `setYear`
+- Added time operations: `addMinutes`, `subWeeks`, `addWeeks`, `startOfISOWeek`, `endOfISOWeek`, `getUnixTime`, `getDaysInMonth`
+- Added difference functions: `differenceInMilliseconds`, `differenceInDays`, `differenceInYears`, `differenceInMonths`, `differenceInWeeks`, `differenceInHours`, `differenceInMinutes`, `differenceInSeconds`
+- Added validation functions: `isValid`
+- Fixed `parse` function to be timezone-aware
+- Updated core/index.ts to properly re-export all date-fns and date-fns-tz functions
+- All date-fns functions now use the global timezone by default
+- Added comprehensive example in examples/timezone-aware-functions.js
+
+### Fixed
+- Fixed issue where some date-fns functions were using system timezone instead of global timezone
+- Fixed naming conflicts between date-fns and date-fns-tz exports
+
+## [1.0.9] - 2025-05-14
 
 ### Added
 - Created dedicated Next.js example file (examples/nextjs-example.jsx) showing best practices for using the library in Next.js applications
@@ -22,7 +45,7 @@ All notable changes to this project will be documented in this file. See [standa
 - Optimized package size by improving the bundling process
 - Updated all documentation references to use version 1.0.9
 
-## [1.0.8] - 2024-05-25
+## [1.0.8] - 2025-05-14
 
 ### Fixed
 - Fixed "exports is not defined in ES module scope" error in Next.js
@@ -30,7 +53,7 @@ All notable changes to this project will be documented in this file. See [standa
 - Updated src/utils/relative.ts to fix import conflicts
 - Enhanced documentation with clearer Next.js integration instructions
 
-## [1.0.7] - 2024-05-23
+## [1.0.7] - 2025-05-14
 
 ### Fixed
 - Resolved Next.js compatibility issues with module parsing
@@ -44,14 +67,14 @@ All notable changes to this project will be documented in this file. See [standa
 
 * remove unused isServer parameter in next.config.js ([5494aaf](https://github.com/subhamg/date-fns-toolkit/commit/5494aafd7208136469b21206bdc6f4d0966fb597))
 
-## [1.0.3] - 2024-05-20
+## [1.0.3] - 2025-05-13
 
 ### Fixed
 - Resolved Next.js compatibility issues with module parsing
 - Added Next.js configuration guide and example
 - Fixed rollup.config.js to properly handle CommonJS and ESM outputs
 
-## [1.0.2] - 2024-05-15
+## [1.0.2] - 2025-05-13
 
 ### Added
 - Added comprehensive documentation
@@ -61,9 +84,16 @@ All notable changes to this project will be documented in this file. See [standa
 ### Fixed
 - Fixed name conflicts between date-fns and date-fns-tz exports
 
-## [1.0.1] - 2024-05-10
+## [1.0.1] - 2025-05-13
 
 ### Added
 - Initial release with core functionality
 - Timezone-aware date operations
 - React integration with hooks and context
+
+## [1.0.0] - Initial Release
+
+- Initial release of date-fns-toolkit
+- Timezone-aware date operations
+- React integration with hooks and context
+- Global timezone configuration
