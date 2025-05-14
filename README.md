@@ -352,3 +352,7 @@ The package provides multiple module formats to ensure compatibility:
 - **Legacy ESM**: `dist/index.esm.js` (for backward compatibility)
 
 In most cases, your bundler or environment will automatically choose the right format.
+
+## Latest Version
+
+Current version: 1.0.9

@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file. See [standa
 
 <!-- CHANGELOG will be automatically updated by semantic-release -->
 
+## [1.0.9] - 2024-05-30
+
+### Added
+- Created dedicated Next.js example file (examples/nextjs-example.jsx)
+- Enhanced documentation for Next.js users
+
+### Fixed
+- Updated documentation to reference the latest version
+- Improved compatibility with various JavaScript environments
+
 ## [1.0.8] - 2024-05-25
 
 ### Fixed

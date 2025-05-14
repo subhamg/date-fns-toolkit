@@ -29,7 +29,7 @@ Error: Failed to load external module date-fns-toolkit: ReferenceError: exports 
 
 ### Option 1: Use the MJS Import
 
-As of version 1.0.8, date-fns-toolkit provides a dedicated MJS file for ESM environments. In your Next.js application, import the package like this:
+As of version 1.0.9, date-fns-toolkit provides a dedicated MJS file for ESM environments. In your Next.js application, import the package like this:
 
 ```javascript
 // Use this import syntax
@@ -79,7 +79,7 @@ import { format, addDays } from 'date-fns-toolkit/dist/index.js';
 
 If you continue to experience issues:
 
-1. Make sure you're using the latest version of date-fns-toolkit (1.0.8 or later)
+1. Make sure you're using the latest version of date-fns-toolkit (1.0.9 or later)
 2. Clear your Next.js cache: `rm -rf .next`
 3. Reinstall node_modules: `rm -rf node_modules && npm install`
 
