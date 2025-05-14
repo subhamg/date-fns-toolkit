@@ -2,7 +2,9 @@
 
 [![CI](https://github.com/subhamg/date-fns-toolkit/actions/workflows/ci.yml/badge.svg)](https://github.com/subhamg/date-fns-toolkit/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/subhamg/date-fns-toolkit/branch/main/graph/badge.svg)](https://codecov.io/gh/subhamg/date-fns-toolkit)
-[![npm version](https://badge.fury.io/js/date-fns-toolkit.svg)](https://badge.fury.io/js/date-fns-toolkit)
+[![npm version](https://img.shields.io/npm/v/date-fns-toolkit.svg)](https://www.npmjs.com/package/date-fns-toolkit)
+[![Version](https://img.shields.io/badge/version-1.0.9-blue.svg)](https://github.com/subhamg/date-fns-toolkit/releases)
+[![Downloads](https://img.shields.io/npm/dm/date-fns-toolkit.svg)](https://www.npmjs.com/package/date-fns-toolkit)
 [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-support-%23FFDD00?style=flat&logo=buy-me-a-coffee)](https://www.buymeacoffee.com/subhamg)
 
 A comprehensive toolkit for working with dates in JavaScript, including global timezone support and React integration.
