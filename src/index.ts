@@ -1,26 +1,23 @@
 // Export types
-export type { DateInput } from './types';
-export type { TimezoneProviderProps } from './TimezoneContext';
+export type { DateInput } from "./types";
+export type { TimezoneProviderProps } from "./TimezoneContext";
 
 // Export timezone configuration functions
 export {
   setDefaultTimezone,
   getDefaultTimezone,
-  resolveTimezone
-} from './timezone-config';
+  resolveTimezone,
+} from "./timezone-config";
 
 // Export core date-fns and date-fns-tz functionality
-export * from './core';
+export * from "./core";
 
 // Export hooks and components
-export { useDateTimezone } from './useDateTimezone';
-export { TimezoneProvider, useTimezoneContext } from './TimezoneContext';
+export { useDateTimezone } from "./useDateTimezone";
+export { TimezoneProvider, useTimezoneContext } from "./TimezoneContext";
 
 // Export global timezone configuration
-export { 
-  detectTimezone,
-  initializeTimezone
-} from './timezone-config';
+export { detectTimezone, initializeTimezone } from "./timezone-config";
 
 // Export individual toolkit utility functions
 // Format functions
@@ -30,21 +27,14 @@ export {
   formatDateShort,
   formatDateLong,
   formatDateTime,
-  formatTime
-} from './utils';
+  formatTime,
+} from "./utils";
 
 // Conversion functions
-export {
-  toZonedTime,
-  fromZonedTime
-} from './utils';
+export { toZonedTime, fromZonedTime } from "./utils";
 
 // Parsing functions
-export {
-  parseInTimeZone,
-  parseISO,
-  parse
-} from './utils';
+export { parseInTimeZone, parseISO, parse } from "./utils";
 
 // Date operations with timezone awareness
 export {
@@ -61,8 +51,8 @@ export {
   addWeeks,
   subWeeks,
   getDaysInMonth,
-  getUnixTime
-} from './utils';
+  getUnixTime,
+} from "./utils";
 
 // Setters with timezone awareness
 export {
@@ -72,8 +62,8 @@ export {
   setMilliseconds,
   setDate,
   setMonth,
-  setYear
-} from './utils';
+  setYear,
+} from "./utils";
 
 // Comparison functions with timezone awareness
 export {
@@ -84,8 +74,11 @@ export {
   isWithinInterval,
   isSameOrAfter,
   isSameOrBefore,
-  isValid
-} from './utils';
+  isValid,
+  isSameMonth,
+  isSameYear,
+  isSameWeek,
+} from "./utils";
 
 // Range functions with timezone awareness
 export {
@@ -98,8 +91,8 @@ export {
   startOfISOWeek,
   endOfISOWeek,
   eachDayOfInterval,
-  getDateRange
-} from './utils';
+  getDateRange,
+} from "./utils";
 
 // Relative time functions with timezone awareness
 export {
@@ -116,5 +109,5 @@ export {
   differenceInWeeks,
   differenceInHours,
   differenceInMinutes,
-  differenceInSeconds
-} from './utils';
+  differenceInSeconds,
+} from "./utils";
