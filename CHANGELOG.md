@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/subhamg/date-fns-toolkit/compare/v1.2.0...v1.3.0) (2025-05-17)
+
+
+### Features
+
+* add timezone-aware toDate function ([e298a62](https://github.com/subhamg/date-fns-toolkit/commit/e298a62d8d72b54635e680703b57c18192fff702))
+
 # [1.3.0](https://github.com/subhamg/date-fns-toolkit/compare/v1.2.0...v1.3.0) (2025-05-18)
 
 
