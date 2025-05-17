@@ -31,7 +31,7 @@ export {
 } from "./utils";
 
 // Conversion functions
-export { toZonedTime, fromZonedTime } from "./utils";
+export { toZonedTime, fromZonedTime, toDate } from "./utils";
 
 // Parsing functions
 export { parseInTimeZone, parseISO, parse } from "./utils";

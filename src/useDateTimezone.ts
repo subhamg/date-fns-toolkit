@@ -41,6 +41,8 @@ export function useDateTimezone(timezone?: string) {
       fromZonedTime: (zonedDate: DateInput) =>
         utils.fromZonedTime(zonedDate, tz),
 
+      toDate: (date: DateInput) => utils.toDate(date, tz),
+
       // Parsing functions
       parseInTimeZone: (dateString: string, formatStr: string) =>
         utils.parseInTimeZone(dateString, formatStr, tz),

@@ -15,12 +15,13 @@ const overriddenFunctions = [
   'startOfYear', 'endOfYear', 'formatDistance', 'formatDistanceToNow',
   'formatRelative', 'differenceInCalendarDays', 'isEqual', 'isWithinInterval',
   'formatISO', 'parseISO', 'isSameOrAfter', 'isSameOrBefore',
+  'isSameYear', 'isSameMonth', 'isSameWeek',
   // New functions
   'setMinutes', 'setHours', 'setSeconds', 'setMilliseconds', 'setDate', 'setMonth', 'setYear',
   'addMinutes', 'subWeeks', 'addWeeks', 'startOfISOWeek', 'endOfISOWeek',
   'getUnixTime', 'getDaysInMonth', 'differenceInMilliseconds', 'differenceInDays',
   'differenceInYears', 'differenceInMonths', 'differenceInWeeks', 'differenceInHours',
-  'differenceInMinutes', 'differenceInSeconds', 'parse', 'isValid'
+  'differenceInMinutes', 'differenceInSeconds', 'parse', 'isValid', 'toDate'
 ];
 
 // Create a new object with all non-overridden functions

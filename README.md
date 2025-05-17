@@ -3,7 +3,7 @@
 [![CI](https://github.com/subhamg/date-fns-toolkit/actions/workflows/ci.yml/badge.svg)](https://github.com/subhamg/date-fns-toolkit/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/subhamg/date-fns-toolkit/branch/main/graph/badge.svg)](https://codecov.io/gh/subhamg/date-fns-toolkit)
 [![npm version](https://img.shields.io/npm/v/date-fns-toolkit.svg)](https://www.npmjs.com/package/date-fns-toolkit)
-[![Version](https://img.shields.io/badge/version-1.2.0-blue.svg)](https://github.com/subhamg/date-fns-toolkit/releases)
+[![Version](https://img.shields.io/badge/version-1.3.0-blue.svg)](https://github.com/subhamg/date-fns-toolkit/releases)
 [![Downloads](https://img.shields.io/npm/dm/date-fns-toolkit.svg)](https://www.npmjs.com/package/date-fns-toolkit)
 [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-support-%23FFDD00?style=flat&logo=buy-me-a-coffee)](https://www.buymeacoffee.com/subhamg)
 
@@ -263,6 +263,7 @@ All toolkit utility functions accept an optional timezone parameter. If not prov
 - `formatTime(date, timezone?)`
 
 #### Conversion Functions
+- `toDate(date, timezone?)`
 - `toZonedTime(date, timezone?)`
 - `fromZonedTime(zonedDate, timezone?)`
 
@@ -337,7 +338,7 @@ In most cases, your bundler or environment will automatically choose the right f
 
 ## Latest Version
 
-Current version: 1.1.0
+Current version: 1.3.0
 
 ## Changelog and Release Notes
 

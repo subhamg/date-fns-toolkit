@@ -2,6 +2,28 @@
 
 This document provides a detailed history of all changes made to the date-fns-toolkit package.
 
+## Version 1.3.0 (2025-05-18)
+
+### Added
+- Added timezone-aware `toDate` function to convert any date value to a Date object with timezone support
+- Added extensive test coverage for conversion functions
+
+### Fixed
+- Fixed issue where `toDate` function could not be imported from date-fns-toolkit
+- Fixed potential timezone conversion issues when handling date objects
+- Improved usability by adding `toDate` to the React hook
+
+## Version 1.2.0 (2025-05-17)
+
+### Added
+- Added new comparison functions: `isSameMonth`, `isSameYear`, and `isSameWeek` to enhance date comparison capabilities
+- Added timezone-aware `toDate` function to convert any date value to a Date object with timezone support
+- Added comprehensive test coverage for comparison functions
+
+### Fixed
+- Fixed issue where `toDate` function could not be imported from date-fns-toolkit
+- Improved test coverage for existing functions
+
 ## Version 1.1.0 (2025-05-14)
 
 ### Added

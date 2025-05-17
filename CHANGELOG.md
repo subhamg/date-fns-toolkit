@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/subhamg/date-fns-toolkit/compare/v1.2.0...v1.3.0) (2025-05-18)
+
+
+### Features
+
+* Added timezone-aware toDate function to convert any date value to a Date object with timezone support. ([b45d87e](https://github.com/subhamg/date-fns-toolkit/commit/b45d87e1a2f34e56c8a419f2b9d623e7f8cb0d1c))
+
 # [1.2.0](https://github.com/subhamg/date-fns-toolkit/compare/v1.1.0...v1.2.0) (2025-05-17)
 
 
