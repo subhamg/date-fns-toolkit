@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/subhamg/date-fns-toolkit/compare/v1.1.0...v1.2.0) (2025-05-17)
+
+
+### Features
+
+* Added new comparison functions: isSameMonth, isSameYear, and isSameWeek to enhance date comparison capabilities. ([579dce9](https://github.com/subhamg/date-fns-toolkit/commit/579dce9b460ec6d74f527431e6214767769063cf))
+
 # Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
